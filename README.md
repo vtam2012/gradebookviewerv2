@@ -1,8 +1,8 @@
 # GradeBook Viewer
 
-## Simple Web Application to understand usage of SpringBoot
+Simple Web Application to understand usage of SpringBoot
 
-#Uses:
+Uses:
 -H2 memory database
 -ThymeLeaf (templates)
 -Spring Data JPA
