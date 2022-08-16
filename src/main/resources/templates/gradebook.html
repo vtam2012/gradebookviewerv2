@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>GradeBook</title>
+</head>
+<body>
+<h1>Gradebook</h1>
+<table>
+  <thead>
+    <tr>
+      <th style="padding: 5px;">ID</th>
+      <th style="padding: 5px;">First Name</th>
+      <th style="padding: 5px;">Last Name</th>
+      <th style="padding: 5px;">Assignment</th>
+      <th style="padding: 5px;">Score</th>
+      <th style="padding: 5px;">Letter Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding-left: 5px; "th:text="${student[0].id}"></td>
+      <td style="padding: 5px;  "th:text="${student[0].firstName}"></td>
+      <td style="padding: 5px;  "th:text="${student[0].lastName}"></td>
+      <td  style="padding: 5px;" th:text="${assignment[0].title}"></td>
+      <td  style="padding: 25px;" th:text="${assignment[0].score}"></td>
+      <td  style="padding: 5px;" th:text="${assignment[0].grade}"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td style="padding: 5px;" th:text="${assignment[1].title}"></td>
+      <td style="padding: 25px;" th:text="${assignment[1].score}"></td>
+      <td style="padding: 5px;" th:text="${assignment[1].grade}"></td>
+    </tr>
+    <tr>
+      <td style="padding-left: 5px; "th:text="${student[1].id}"></td>
+      <td style="padding: 5px;  "th:text="${student[1].firstName}"></td>
+      <td style="padding: 5px;  "th:text="${student[1].lastName}"></td>
+      <td style="padding: 5px;" th:text="${assignment[2].title}"></td>
+      <td style="padding: 25px;" th:text="${assignment[2].score}"></td>
+      <td style="padding: 5px;" th:text="${assignment[2].grade}"></td>
+    </tr>
+
+
+  </tbody>
+</table>
+</body>
+</html>
