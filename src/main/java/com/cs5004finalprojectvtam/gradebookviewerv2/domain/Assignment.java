@@ -1,5 +1,6 @@
 package com.cs5004finalprojectvtam.gradebookviewerv2.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

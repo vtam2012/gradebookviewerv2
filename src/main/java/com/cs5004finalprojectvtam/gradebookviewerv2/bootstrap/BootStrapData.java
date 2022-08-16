@@ -28,6 +28,10 @@ public class BootStrapData implements CommandLineRunner {
       studentRepository.save(vincent);
       assignmentRepository.save(homework1VT);
 
+      Assignment homework2VT = new com.cs5004finalprojectvtam.gradebookviewerv2.domain.Assignment("homework2", 85, "B+", vincent);
+      vincent.getAssignments().add(homework2VT);
+      assignmentRepository.save(homework2VT);
+
       Student mark = new Student("Mark", "Miller");
       Assignment homework1MM = new com.cs5004finalprojectvtam.gradebookviewerv2.domain.Assignment("homework1", 98, "A+", mark);
       mark.getAssignments().add(homework1MM);
