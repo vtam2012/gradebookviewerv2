@@ -6,7 +6,7 @@ import com.cs5004finalprojectvtam.gradebookviewerv2.repositories.AssignmentRepos
 import com.cs5004finalprojectvtam.gradebookviewerv2.repositories.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
+/* class to populate our database with data */
 @Component
 public class BootStrapData implements CommandLineRunner {
   private final StudentRepository studentRepository;
@@ -16,7 +16,13 @@ public class BootStrapData implements CommandLineRunner {
     this.studentRepository = studentRepository;
     this.assignmentRepository = assignmentRepository;
   }
-
+  /* run function runs upon start of application
+   * only runs one time upon startup.
+   *
+   * This is not the best functionality and is temporary.
+   * Future iterations of the project should add buttons to the html
+   * with event listeners which upon mouseclick will add a new student or assignment to our database
+   */
   @Override
   public void run(String... args) throws Exception {
       System.out.println("Started in Bootstrap");

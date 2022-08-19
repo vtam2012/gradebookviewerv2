@@ -1,35 +1,34 @@
 package com.cs5004finalprojectvtam.gradebookviewerv2.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
+/* POJO - Plain old Java Object class Assignments
+ * Represents an Assignment with an id, title, score, letter grade, and the corresponding student
+ */
 @Entity
 public class Assignment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO) // id is auto generated
     private Long id;
     private String title;
     private Integer score;
     private String grade;
-    @ManyToOne
+    @ManyToOne // there are multiple assignments for each student. (ManyToOne relationship)
     private Student student;
-
+    /* empty constructor, required to use spring JPA */
     public Assignment() {
     }
-
+    /* non-empty constructor */
     public Assignment(String title, Integer score, String grade, Student student) {
         this.title = title;
         this.score = score;
         this.grade = grade;
         this.student = student;
     }
-
+    /* getters and setters */
     public Long getId() {
         return id;
     }
@@ -80,7 +79,7 @@ public class Assignment {
             ", student=" + student +
             '}';
     }
-
+    /* override equals and hashcode functions to allow comparison between objects */
     @Override
     public boolean equals(Object o) {
         if (this == o) {

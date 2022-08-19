@@ -9,27 +9,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-
+/* POJO - Plain old Java Object class
+ * Represents a student with an ID, firstName, LastName, and their Assignments
+ */
 @Entity
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO) // id is auto generated
     private Long id;
     private String firstName;
     private String lastName;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL) // there is one student with multiple assignments
     @JoinColumn(name = "student_id")
     private Set<Assignment> assignments = new HashSet<>();
-
+    /* empty constructor, required to use Spring JPA */
     public Student() {
     }
-
+    /* non-empty constructor */
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
+    /* getters and setters */
     public Long getId() {
         return id;
     }
@@ -71,7 +73,7 @@ public class Student {
             ", assignments=" + assignments +
             '}';
     }
-
+    /* override equals and hashcode functions to allow comparison between objects */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
